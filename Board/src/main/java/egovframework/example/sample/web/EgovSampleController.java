@@ -71,12 +71,23 @@ public class EgovSampleController {
 	
 	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	
+	// Main Page
 	@RequestMapping(value = "/home.do")
 	public String Main(){
 		return "sample/home";
 	}
 	
+	// Sign Up Page
+	@RequestMapping(value = "/signUp.do")
+	public String SignUpForm(){
+		return "sample/signUp";
+	}
 	
+	// Sign In Page
+	@RequestMapping(value = "/signIn.do")
+	public String SignInForm(){
+		return "sample/signIn";
+	}
 	
 	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 	/**

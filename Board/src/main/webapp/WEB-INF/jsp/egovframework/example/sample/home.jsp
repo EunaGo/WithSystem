@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
@@ -13,8 +14,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
 
     <!-- Bootstrap core CSS -->
-	<!-- <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
-	<link rel='stylesheet' href='<c:url value='/css/egovframework/bootstrap.css'/>'>
+	<link rel='stylesheet' href='<c:url value='/css/css/bootstrap.css'/>'>
 
     <style>
       .bd-placeholder-img {
@@ -33,10 +33,7 @@
     </style> 
 
     <!-- Custom styles for this template -->
-     
-    <%-- <link href='<c:url value="../css/home.css"/>' rel="stylesheet"> --%>
-    <%-- <link type="text/css" rel="stylesheet" href="<c:url value='/css/egovframework/home.css'/>"/> --%>
-    <link href="/css/css/carousel.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="<c:url value='/css/egovframework/home.css'/>"/>
     
   </head>
   <body>
@@ -56,9 +53,18 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
+
+          <c:if test="${empty loginInfo}">
+			<li class="nav-item active"><a class="nav-link" href="<c:url value='/signIn.do'/>">Sign In</a></li>
+		  </c:if>
+		  <c:if test="${not empty loginInfo}">
+			<li class="nav-item active"><a class="nav-link" id="logout" href="<c:url value='#'/>">Logout</a></li>
+		  </c:if>
+		  
+		  <c:if test="${empty loginInfo}">
+			<li class="nav-item active"><a class="nav-link" href="<c:url value='/signUp.do'/>">Sign Up</a></li>
+		  </c:if>
+          
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -210,11 +216,7 @@
   </footer>
 </main>
 
-
-    <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-	    <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-	
+    <script src="<c:url value='/css/js/bootstrap.bundle.min.js' />" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
       
   </body>
 </html>
