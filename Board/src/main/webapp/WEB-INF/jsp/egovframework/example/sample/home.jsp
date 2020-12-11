@@ -55,14 +55,14 @@
           </li>
 
           <c:if test="${empty loginInfo}">
-			<li class="nav-item active"><a class="nav-link" href="<c:url value='/signIn.do'/>">Sign In</a></li>
+			<li class="nav-item active"><a class="nav-link" href="<c:url value='/signInForm.do'/>">Sign In</a></li>
 		  </c:if>
 		  <c:if test="${not empty loginInfo}">
 			<li class="nav-item active"><a class="nav-link" id="logout" href="<c:url value='#'/>">Logout</a></li>
 		  </c:if>
 		  
 		  <c:if test="${empty loginInfo}">
-			<li class="nav-item active"><a class="nav-link" href="<c:url value='/signUp.do'/>">Sign Up</a></li>
+			<li class="nav-item active"><a class="nav-link" href="<c:url value='/signUpForm.do'/>">Sign Up</a></li>
 		  </c:if>
           
         </ul>

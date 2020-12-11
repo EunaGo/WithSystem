@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<mapper namespace="egovframework.example.sample.service.impl.EgovUserDAO">
+
+<sqlMap namespace="userDAO">
+	INSERT INTO USER (
+		USER_ID, USER_PW, USER_NAME, USE_YN, REG_DATE, REG_ID, REG_IP
+	)VALUES (
+		#userId#,#userPw#,#userName#,"Y",NOW(),#regId#,#regIp#
+	)
+	
+</sqlMap>

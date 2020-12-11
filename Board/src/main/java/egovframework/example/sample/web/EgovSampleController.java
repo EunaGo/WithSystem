@@ -78,13 +78,13 @@ public class EgovSampleController {
 	}
 	
 	// Sign Up Page
-	@RequestMapping(value = "/signUp.do")
+	@RequestMapping(value = "/signUpForm.do")
 	public String SignUpForm(){
 		return "sample/signUp";
 	}
 	
 	// Sign In Page
-	@RequestMapping(value = "/signIn.do")
+	@RequestMapping(value = "/signInForm.do")
 	public String SignInForm(){
 		return "sample/signIn";
 	}
